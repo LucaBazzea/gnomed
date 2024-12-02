@@ -23,13 +23,22 @@
         </style>
     </head>
     <body>
-        <video id="video" controls autoplay muted loop>
+        <video id="video" controls loop>
             <source src="static/gnomed.mp4" type="video/mp4" />
         </video>
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const video = document.getElementById("video");
-                video.play();
+                console.log(video.currentTime);
+                // video.play();
+            });
+            document.addEventListener("click", function (event) {
+                if (video.paused === false) {
+                    console.log("Video is playing");
+                }
+                if (video.currentTime != 0) {
+                    console.log("Video is playing 2");
+                }
             });
         </script>
     </body>
